@@ -6,9 +6,9 @@
 
 	"game_projects"              : "GameSDK",
 
-  "win_module_extensions": [ "audio_fmod", "brofiler", "mono" ],
+  "win_module_extensions": [ "audio_fmod", "brofiler"],
 
-  "defines"                               : ["UQS_SCHEMATYC_SUPPORT=1", "SUPPORT_UNSIGNED_PAKS"],
+  "defines"                               : ["UQS_SCHEMATYC_SUPPORT=1", "SUPPORT_UNSIGNED_PAKS", "USE_SCHEMATYC", "USE_SCHEMATYC_EXPERIMENTAL"],
 
 	"modules" :
 	[
@@ -32,8 +32,9 @@
 		"CrySystem",
 		"CryScaleformHelper",
 		"CryAction",
-		"CrySchematyc",
+		"CrySchematyc2",
 		"CryFlowGraph",
+		"CryReflection",
 		"HWScripts",
 	
 		"CryDefaultEntities",
@@ -67,6 +68,17 @@
 		"MaterialEditorPlugin",
 		"FacialEditorPlugin",
 		"EditorCSharp",
+		"EditorUQS",
+		"EditorUQS_HistoryInspector",
+		"EditorDescriptorDatabase",
+		"DependencyGraph",
+		"EditorConsole",
+		"EditorSchematyc",
+		"EditorSchematyc2",
+		"EditorSubstance",
+		"LodGeneratorPlugin",
+		"MaterialEditor",
+		"SchematycEditor",
 		
 		"zlib",
 		"expat",
@@ -96,6 +108,7 @@
 		"sdl_mixer",
 		"smpeg",
 		"timidity",
+		"mikkelsen",
 		
 		"LuaCompiler",
 		"CryQt",
@@ -115,24 +128,17 @@
 		"CryAudioImplPortAudio",
 		
 		"CryRenderD3D11",
-		"CryRenderD3D12",
-		"CryRenderVulkan",
 
-		"CryScaleformHelper",
-
-		"CryMonoBridge"
+		"CryScaleformHelper"
 	],
 	
 	"win_modules": [
 		"WindowsLauncher",
 		"CryRenderD3D11",
-		"CryRenderD3D12",
-		"CryRenderVulkan",
 		"CryAudioImplSDLMixer",
 		"CryAudioImplFmod",
 		"CryAudioImplPortAudio",
 		"CryLobby",
-		"CryMonoBridge",
 		"CryUserAnalytics"
 	]
 }

@@ -5,15 +5,13 @@
             "AI/AiBehaviorLibrary.cpp", 
             "AI/AIManager.cpp", 
             "AI/AIMoveSimulation.cpp", 
+            "AI/AIMoveSimulation.h", 
             "AI/CoverSurfaceManager.cpp", 
-            "AI/ScriptBind_AI.cpp", 
             "AI/EditorCommands_AI.cpp", 
             "AI/AiBehavior.h", 
             "AI/AiBehaviorLibrary.h", 
             "AI/AIManager.h", 
-            "AI/AIMoveSimulation.h", 
-            "AI/CoverSurfaceManager.h", 
-            "AI/ScriptBind_AI.h"
+            "AI/CoverSurfaceManager.h"
         ]
     }, 
     "Editor_Uber_ControlsQt.cpp": {
@@ -22,10 +20,6 @@
             "QT/Widgets/QEditToolButton.h", 
             "QT/Widgets/QPreviewWidget.cpp", 
             "QT/Widgets/QPreviewWidget.h"
-        ], 
-        "Controls/Deprecated": [
-            "PanelSimpleTreeBrowser.cpp", 
-            "PanelSimpleTreeBrowser.h"
         ]
     }, 
     "Editor_Uber_Core.cpp": {
@@ -128,27 +122,18 @@
         "LevelEditor/EditTools/EditMode": [
             "Util/KDTree.cpp", 
             "Util/KDTree.h", 
-            "EditMode/DeepSelection.cpp", 
-            "EditMode/DeepSelection.h", 
             "EditMode/VertexSnappingModeTool.h", 
-            "EditMode/VertexSnappingModeTool.cpp", 
-            "EditMode/ObjectMode.cpp", 
-            "EditMode/ObjectMode.h", 
-            "EditMode/SubObjectSelectionReferenceFrameCalculator.cpp", 
-            "EditMode/SubObjectSelectionReferenceFrameCalculator.h"
+            "EditMode/VertexSnappingModeTool.cpp"
         ], 
         "LevelEditor/EditTools/LinkTool": [
             "LinkTool.cpp", 
-            "LinkTool.h"
+            "LinkTool.h", 
+            "EditorCommands_Tools.cpp"
         ], 
         "LevelEditor/EditTools/PhysTool": [
             "Commands/EditorCommands_Physics.cpp", 
             "PhysTool.cpp", 
             "PhysTool.h"
-        ], 
-        "LevelEditor/EditTools/Pick": [
-            "PickObjectTool.cpp", 
-            "PickObjectTool.h"
         ]
     }, 
     "Editor_Uber_ExportManager.cpp": {
@@ -349,6 +334,7 @@
         "LevelEditor": [
             "LevelEditor/LevelEditor.cpp", 
             "LevelEditor/LevelEditor.h", 
+            "LevelEditor/EditorCommands_Level.cpp", 
             "CryEditDoc.cpp", 
             "CryEditDoc.h", 
             "LevelEditor/LevelAssetType.cpp", 
@@ -363,7 +349,10 @@
             "LevelEditor/LevelModelsManager.cpp", 
             "LevelEditor/LevelEditorViewport.cpp", 
             "LevelEditor/LevelEditorViewport.h", 
-            "LevelEditor/EditorCommands_Level.cpp"
+            "LevelEditor/TagLocations.cpp", 
+            "LevelEditor/TagLocations.h", 
+            "LevelEditor/ObjectToPrefabAssetConverter.h", 
+            "LevelEditor/ObjectToPrefabAssetConverter.cpp"
         ], 
         "LevelEditor/Dialogs": [
             "LevelEditor/NewLevelDialog.cpp", 
@@ -406,6 +395,7 @@
         "LevelEditor/Objects/Basic": [
             "SurfaceInfoPicker.h", 
             "SurfaceInfoPicker.cpp", 
+            "Objects/EditorCommands_Group.cpp", 
             "Objects/Group.cpp", 
             "Objects/Group.h", 
             "Objects/SelectionGroup.cpp", 
@@ -414,6 +404,8 @@
             "Objects/SubObjSelection.h", 
             "Objects/PrefabObject.cpp", 
             "Objects/PrefabObject.h", 
+            "Objects/PrefabPicker.cpp", 
+            "Objects/PrefabPicker.h", 
             "Objects/SafeObjectsArray.cpp", 
             "Objects/SafeObjectsArray.h", 
             "Objects/ObjectLayer.cpp", 
@@ -421,7 +413,13 @@
             "Objects/ObjectLayerManager.cpp", 
             "Objects/ObjectLayerManager.h", 
             "Objects/ObjectManager.cpp", 
-            "Objects/ObjectManager.h"
+            "Objects/ObjectManager.h", 
+            "Objects/EditorCommands_BaseObject.cpp", 
+            "Objects/EditorCommands_Entity.cpp", 
+            "Objects/EditorCommands_Layer.cpp", 
+            "Objects/EditorCommands_Selection.cpp", 
+            "Objects/GuidCollisionResolver.cpp", 
+            "Objects/GuidCollisionResolver.h"
         ], 
         "LevelEditor/Objects/Graphics": [
             "Objects/WaterShapeObject.cpp", 
@@ -472,10 +470,13 @@
         "LevelEditor/Objects/Entities": [
             "Objects/EntityObject.cpp", 
             "Objects/EntityObject.h", 
+            "Objects/EntityObjectUndo.h", 
             "Objects/EntityObjectWithComponent.cpp", 
             "Objects/EntityObjectWithComponent.h", 
             "Objects/EntityObjectWithStaticMeshComponent.cpp", 
             "Objects/EntityObjectWithStaticMeshComponent.h", 
+            "Objects/EntityObjectWithAnimatedMeshComponent.cpp", 
+            "Objects/EntityObjectWithAnimatedMeshComponent.h", 
             "Objects/UndoEntityParam.cpp", 
             "Objects/UndoEntityParam.h", 
             "Objects/UndoEntityProperty.cpp", 
@@ -484,6 +485,8 @@
             "Objects/SimpleEntity.h", 
             "Objects/ProtEntityObject.cpp", 
             "Objects/ProtEntityObject.h", 
+            "Objects/ProximityTriggerObject.cpp", 
+            "Objects/ProximityTriggerObject.h", 
             "Script/ScriptEnvironment.cpp", 
             "Script/ScriptEnvironment.h", 
             "LuaCommentParser.h", 
@@ -633,8 +636,6 @@
             "Material/MaterialBrowser.h", 
             "Material/MaterialDialog.cpp", 
             "Material/MaterialDialog.h", 
-            "Material/StandaloneMaterialEditor.cpp", 
-            "Material/StandaloneMaterialEditor.h", 
             "Material/MaterialFXGraphMan.cpp", 
             "Material/MaterialFXGraphMan.h", 
             "Material/MaterialImageListCtrl.cpp", 
@@ -988,12 +989,10 @@
             "EntityScriptDialog.h"
         ], 
         "DataBase/PrefabsEditor": [
-            "Prefabs/PrefabDialog.cpp", 
             "Prefabs/PrefabItem.cpp", 
             "Prefabs/PrefabLibrary.cpp", 
             "Prefabs/PrefabManager.cpp", 
             "Prefabs/PrefabEvents.cpp", 
-            "Prefabs/PrefabDialog.h", 
             "Prefabs/PrefabItem.h", 
             "Prefabs/PrefabLibrary.h", 
             "Prefabs/PrefabManager.h", 
@@ -1063,12 +1062,6 @@
             "Include/Serialization/Decorators/EntityLink.h"
         ]
     }, 
-    "Editor_Uber_Settings.cpp": {
-        "Core/Settings": [
-            "Settings.cpp", 
-            "Settings.h"
-        ]
-    }, 
     "Editor_Uber_Terrain.cpp": {
         "Terrain": [
             "TopRendererWnd.cpp", 
@@ -1077,6 +1070,7 @@
             "Util/DynamicArray2D.h", 
             "Util/ImagePainter.cpp", 
             "Util/ImagePainter.h", 
+            "Terrain/TerrainCommon.h", 
             "Terrain/GenerationParam.cpp", 
             "Terrain/Heightmap.cpp", 
             "Terrain/Layer.cpp", 
@@ -1097,6 +1091,7 @@
             "Terrain/RGBLayer.h", 
             "Terrain/SurfaceType.h", 
             "Terrain/TerrainBeachGen.h", 
+            "Terrain/TerrainDebugger.cpp", 
             "Terrain/TerrainGrid.h", 
             "Terrain/TerrainLayerTexGen.h", 
             "Terrain/TerrainLightGen.h", 
@@ -1185,10 +1180,8 @@
         ], 
         "Util/Ruler": [
             "Util/Ruler.cpp", 
-            "Util/RulerPathAgent.cpp", 
             "Util/RulerPoint.cpp", 
             "Util/Ruler.h", 
-            "Util/RulerPathAgent.h", 
             "Util/RulerPoint.h"
         ]
     }, 
@@ -1217,24 +1210,26 @@
         "Vegetation": [
             "Vegetation/VegetationMap.cpp", 
             "Vegetation/VegetationObject.cpp", 
-            "Vegetation/VegetationPaintTool.cpp", 
-            "Vegetation/VegetationEraseTool.cpp", 
-            "Vegetation/VegetationSelectTool.cpp", 
-            "Vegetation/VegetationPlaceTool.cpp", 
             "Vegetation/VegetationEditor.cpp", 
             "Vegetation/VegetationModel.cpp", 
             "Vegetation/VegetationTreeView.cpp", 
             "Vegetation/VegetationDragDropData.cpp", 
             "Vegetation/VegetationMap.h", 
             "Vegetation/VegetationObject.h", 
-            "Vegetation/VegetationPaintTool.h", 
-            "Vegetation/VegetationEraseTool.h", 
-            "Vegetation/VegetationSelectTool.h", 
-            "Vegetation/VegetationPlaceTool.h", 
             "Vegetation/VegetationEditor.h", 
             "Vegetation/VegetationModel.h", 
             "Vegetation/VegetationTreeView.h", 
             "Vegetation/VegetationDragDropData.h"
+        ], 
+        "Vegetation/Tools": [
+            "Vegetation/VegetationEraseTool.cpp", 
+            "Vegetation/VegetationEraseTool.h", 
+            "Vegetation/VegetationPaintTool.cpp", 
+            "Vegetation/VegetationPaintTool.h", 
+            "Vegetation/VegetationPlaceTool.cpp", 
+            "Vegetation/VegetationPlaceTool.h", 
+            "Vegetation/VegetationSelectTool.cpp", 
+            "Vegetation/VegetationSelectTool.h"
         ]
     }, 
     "Editor_Uber_Viewports.cpp": {
